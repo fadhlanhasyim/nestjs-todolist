@@ -1,0 +1,14 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model todo {
+  id         Int     @id(map: "PK_d429b7114371f6a35c5cb4776a7") @default(autoincrement())
+  title      String  @db.VarChar
+  isFinished Boolean
+}

@@ -18,12 +18,12 @@ export class TodoController {
 
     @Delete(':id')
     deleteData(@Param('id') id:string){
-        return this.todoService.deleteData(id);
+        return this.todoService.deleteData(+id);
     }
 
     @Put(':id')
     updateData(@Param('id') id:string, @Body() todo:Partial<TodoDTO>){
-        return this.todoService.updateData(id, todo);
+        return this.todoService.updateData(+id, todo);
     }
 
 }
