@@ -20,6 +20,8 @@ export class TodoService {
 
     async createData(data: Prisma.todoCreateInput): Promise<Todo> {
         data.isFinished = JSON.parse(data.isFinished + "")
+        // console.log(data.title)
+        // console.log("data: " + data)
         return this.prisma.todo.create({data})
         // const newTodo = this.todoRepository.create(todo);
         // await this.todoRepository.save(newTodo);

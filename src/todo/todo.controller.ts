@@ -13,6 +13,7 @@ export class TodoController {
 
     @Post()
     createData(@Body() todo:TodoDTO){
+        // console.log(todo)
         return this.todoService.createData(todo);
     }
 

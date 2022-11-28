@@ -1,4 +1,4 @@
-export class TodoDTO{
+export class TodoDTO {
     title: string
     isFinished: boolean
 }
