@@ -11,16 +11,17 @@ model todo {
   id         Int     @id(map: "PK_d429b7114371f6a35c5cb4776a7") @default(autoincrement())
   title      String  @db.VarChar
   isfinished Boolean
+  uemail String
 }
 
 model TodoModel {
   id Int @id() @default(autoincrement())
   title String 
   isfinished Boolean
-  userEmail String
+  useremail String
 }
 
-model User {
+model user {
   email String @id()
-  userId String
+  userid String
 }

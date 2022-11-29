@@ -17,15 +17,8 @@ export class UserController {
     }
 
     @Post()
-    createData(@Body() token:string){
-        // const user:UserDTO = {
-        //     email: 'haha', userId: 'kk',
-        // };
-        var user:UserDTO;
-        user.email = 'blabla'
-        user.userId = 'kkkk'
-        console.log(token)
-        console.log(user.email)
-        return this.userService.createData(user)
+    createData(@Body() body){
+        // console.log(body['token'])
+        return this.userService.createData(body['token'])
     }
 }

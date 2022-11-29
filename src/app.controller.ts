@@ -16,8 +16,8 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('verify/:token')
-  verifyToken(token:string): Promise<DecodedIdToken> {
-    return this.appService.verifyToken(token)
-  }
+  // @Get('verify/:token')
+  // verifyToken(token:string): Promise<DecodedIdToken> {
+  //   return this.appService.verifyToken(token)
+  // }
 }

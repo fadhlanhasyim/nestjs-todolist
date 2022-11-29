@@ -5,7 +5,7 @@ import { FirebaseService } from './providers/Firebase.service';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  FirebaseService.initAdmin()
+  // FirebaseService.initAdmin()
   // await app.listen(process.env.PORT || 3000);
   await app.listen(8000);
 }

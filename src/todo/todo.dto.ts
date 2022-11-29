@@ -2,6 +2,7 @@ export class TodoDTO {
     title: string
     isFinished: boolean
     isfinished: boolean
+    uemail: string
 }
 export class TodoModelDTO {
     title: string
