@@ -19,7 +19,7 @@ export class TodoService {
     }
 
     async createData(data: Prisma.todoCreateInput): Promise<Todo> {
-        data.isFinished = JSON.parse(data.isFinished + "")
+        data.isfinished = JSON.parse(data.isfinished + "")
         // console.log(data.title)
         // console.log("data: " + data)
         return this.prisma.todo.create({data})
@@ -37,7 +37,7 @@ export class TodoService {
     }
 
     async updateData(id: number, data: Prisma.todoUpdateInput) : Promise<Todo>{
-        data.isFinished = JSON.parse(data.isFinished+"")
+        data.isfinished = JSON.parse(data.isfinished+"")
         return this.prisma.todo.update({
             where: {
                 id:id,

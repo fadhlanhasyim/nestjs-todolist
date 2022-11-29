@@ -3,6 +3,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TodoModule } from './todo/todo.module';
+import { UserModule } from './user/user.module';
+import { FirebaseAdminModule } from '@aginix/nestjs-firebase-admin'
+import * as admin from 'firebase-admin'
+import { FirebaseService } from './providers/Firebase.service';
 
 @Module({
   imports: [
@@ -18,9 +22,15 @@ import { TodoModule } from './todo/todo.module';
     //   logging: true,
     //   entities: ['src/**/*.entitiy.js', 'dist/**/*.entitiy.js'],
     // }),
+    FirebaseAdminModule.forRootAsync({
+      useFactory: () => ({
+        credential: admin.credential.applicationDefault()
+      })
+    }),
     TodoModule,
+    UserModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, FirebaseService],
 })
 export class AppModule {}
